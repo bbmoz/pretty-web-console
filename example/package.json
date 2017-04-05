@@ -1,0 +1,10 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "description": "example for pretty-web-console",
+  "private": true,
+  "author": "Joe Lee (https://github.com/bbmoz)",
+  "dependencies": {
+    "pretty-web-console": "./../dist/pretty-web-console.js"
+  }
+}
