@@ -16,41 +16,8 @@ const weights = [
   'normal', 'bold', 'lighter', 'bolder'
 ]
 
-const allStyleValues = colors.concat(weights)
+const sizes = [
+  'small', 'medium', 'large'
+]
 
-// fns
-const styleFns = allStyleValues.map(styleValue => {
-  return {
-    [styleValue]: function (text) {
-      let styleType
-      if (colors.includes(styleValue)) {
-        styleType = 'color'
-      } else if (weights.includes(styleValue)) {
-        styleType = 'font-weight'
-      }
-      let style = `${styleType}: ${styleValue};`
-
-      if (typeof this === 'function') {
-        style += (new this()).style
-      }
-      if (text !== undefined) {
-        console.log(`%c${text}`, style)
-      }
-      console.log(style)
-      this.style = style
-    }
-  }
-})
-
-// map
-const styleMap = {}
-styleFns.forEach(styleAfn => {
-  const styleA = styleAfn[Object.keys(styleAfn)[0]]
-  styleFns.forEach(styleBfn => {
-    const styleB = styleBfn[Object.keys(styleBfn)[0]]
-    styleA[styleB.name] = styleB
-  })
-  styleMap[styleA.name] = styleA
-})
-
-module.exports = styleMap
+export { colors, weights, sizes }

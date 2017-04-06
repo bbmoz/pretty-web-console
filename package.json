@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist/",
-    "build": "babili src/ -d dist/",
+    "build": "webpack -p",
     "pretest": "eslint src/ && npm run build",
     "test": "ava",
     "example": "cd example/ && webpack && http-server dist/"
@@ -65,6 +65,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "html-webpack-plugin": "^2.28.0",
+    "sinon": "^2.1.0",
     "webpack": "^2.3.2"
   }
 }
