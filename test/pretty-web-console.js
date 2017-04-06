@@ -39,6 +39,20 @@ test('pwc.weight("bold").log("hi"): bold text', t => {
   t.true(logSpy.calledWith('%chi', 'font-weight:bold;'))
 })
 
+test('pwc.size(20).log("hi"): 20px text', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc.size(20).log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-size:20px;'))
+})
+
+test('pwc.large().log("hi"): large text', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc.large().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-size:large;'))
+})
+
 test('pwc.bold().log("hi"): bold text', t => {
   t.plan(1)
   const logSpy = spy()
@@ -67,11 +81,11 @@ test('pwc.bg("blue").log("hi"): text with blue background', t => {
   t.true(logSpy.calledWith('%chi', 'background-color:blue;'))
 })
 
-test('pwc.color("#444").bold().bg("green").log("hi"): gray bold text with green background', t => {
+test('pwc.large().color("#444").bold().bg("green").log("hi"): gray, bold, and large text with green background', t => {
   t.plan(1)
   const logSpy = spy()
-  pwc.color("#444").bold().bg("green").log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'color:#444;font-weight:bold;background-color:green;'))
+  pwc.large().color("#444").bold().bg("green").log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;'))
 })
 
 test.beforeEach(() => {

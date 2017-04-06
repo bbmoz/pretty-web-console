@@ -1,11 +1,14 @@
-import log from 'pretty-web-console'
+import pwc from 'pretty-web-console'
 
-log.blue('i am blue')
+pwc.blue().log('i am blue').done()
 
-log.bold('i am bold')
+pwc.bold().log('i am bold').done()
 
-log.underline('i am underlined')
+pwc.color('blue').weight('bold').log('i am blue and bold').done()
 
-log.bgBlue('i have a blue background')
+pwc.bg('lightblue').log('i have a light blue background').done()
 
-log.blue.bold.underline.bgLightBlue('i am a mix')
+pwc.large().log('i am large').done()
+
+pwc.large().bg('lightgreen').color('blue').bold().log('i have a light green background, and i am large and blue').done()
+

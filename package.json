@@ -1,7 +1,7 @@
 {
   "name": "pretty-web-console",
-  "version": "0.0.0",
-  "description": "Extend your objects using a decorator!",
+  "version": "0.0.1",
+  "description": "Prettier logs in your browser console!",
   "main": "dist/pretty-web-console.js",
   "files": [
     "dist/",

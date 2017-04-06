@@ -5,6 +5,6 @@
   "private": true,
   "author": "Joe Lee (https://github.com/bbmoz)",
   "dependencies": {
-    "pretty-web-console": "./../dist/pretty-web-console.js"
+    "pretty-web-console": "^0.0.1"
   }
 }
