@@ -7,7 +7,6 @@ function chainFns (store) {
 
   function log (val, log = console.log) {
     log(`%c${val}`, store.style)
-    return store.styleFns
   }
 
   function color (val) {

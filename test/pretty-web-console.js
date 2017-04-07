@@ -7,14 +7,6 @@ test('pwc.log("hi"): plain text', t => {
   const logSpy = spy()
   const styleFns = pwc.log('hi', logSpy)
   t.true(logSpy.calledWith('%chi', ''))
-  t.is(typeof styleFns, 'object')
-})
-
-test('pwc.log("hi").done(): plain text with completion', t => {
-  t.plan(2)
-  const logSpy = spy()
-  const styleFns = pwc.log('hi', logSpy).done()
-  t.true(logSpy.calledWith('%chi', ''))
   t.is(styleFns, undefined)
 })
 
