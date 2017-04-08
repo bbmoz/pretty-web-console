@@ -2,6 +2,8 @@
 
 > Prettier logs in your browser console!
 
+![v0.0.3](/media/v0.0.3.png)
+
 ```javascript
 import pwc from 'pretty-web-console'
 
@@ -15,5 +17,7 @@ pwc.bg('lightblue').log('i have a light blue background')
 
 pwc.large().log('i am large')
 
-pwc.weight('large').bg('lightgreen').color('blue').bold().log('i have a light green background, and i am large and blue')
+pwc.underline().log('i am underlined')
+
+pwc.decorate('underline').weight('large').bg('lightgreen').color('blue').bold().log('i have a light green background, i am large and blue, and i am underlined')
 ```
