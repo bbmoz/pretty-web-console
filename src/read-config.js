@@ -1,26 +1,24 @@
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate } from './append-styles'
+
 function readConfig (store, config) {
   const styleNames = Object.keys(config)
   styleNames.forEach(styleName => {
     const styleVal = config[styleName]
     switch (styleName) {
       case 'color':
-        store.appendStyle(`color:${styleVal};`)
+        appendColor(store, styleVal)
         break
       case 'weight':
-        store.appendStyle(`font-weight:${styleVal};`)
+        appendWeight(store, styleVal)
         break
       case 'bg':
-        store.appendStyle(`background-color:${styleVal};`)
+        appendBg(store, styleVal)
         break
       case 'size':
-        if (!+styleVal) {
-          store.appendStyle(`font-size:${styleVal};`)
-        } else {
-          store.appendStyle(`font-size:${styleVal}px;`)
-        }
+        appendSize(store, styleVal)
         break
       case 'decorate':
-        store.appendStyle(`text-decoration:${styleVal};`)
+        appendDecorate(store, styleVal)
         break
     }
   })

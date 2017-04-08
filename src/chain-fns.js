@@ -1,4 +1,5 @@
 import { colors, weights, sizes, decorates } from './named-style-vals'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate } from './append-styles'
 
 function chainFns (store) {
   store.styleFns = {
@@ -11,31 +12,27 @@ function chainFns (store) {
   }
 
   function color (val) {
-    store.appendStyle(`color:${val};`)
+    appendColor(store, val)
     return store.styleFns
   }
 
   function weight (val) {
-    store.appendStyle(`font-weight:${val};`)
+    appendWeight(store, val)
     return store.styleFns
   }
 
   function bg (val) {
-    store.appendStyle(`background-color:${val};`)
+    appendBg(store, val)
     return store.styleFns
   }
 
   function size (val) {
-    if (!+val) {
-      store.appendStyle(`font-size:${val};`)
-    } else {
-      store.appendStyle(`font-size:${val}px;`)
-    }
+    appendSize(store, val)
     return store.styleFns
   }
 
   function decorate (val) {
-    store.appendStyle(`text-decoration:${val};`)
+    appendDecorate(store, val)
     return store.styleFns
   }
 
@@ -43,13 +40,13 @@ function chainFns (store) {
   namedStyleVals.forEach(styleVal => {
     store.styleFns[styleVal] = function () {
       if (colors.includes(styleVal)) {
-        store.appendStyle(`color:${styleVal};`)
+        appendColor(store, styleVal)
       } else if (weights.includes(styleVal)) {
-        store.appendStyle(`font-weight:${styleVal};`)
+        appendWeight(store, styleVal)
       } else if (sizes.includes(styleVal)) {
-        store.appendStyle(`font-size:${styleVal};`)
+        appendSize(store, styleVal)
       } else if (decorates.includes(styleVal)) {
-        store.appendStyle(`text-decoration:${styleVal};`)
+        appendDecorate(store, styleVal)
       }
       return store.styleFns
     }
