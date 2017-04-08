@@ -3,8 +3,5 @@
   "version": "0.0.0",
   "description": "example for pretty-web-console",
   "private": true,
-  "author": "Joe Lee (https://github.com/bbmoz)",
-  "dependencies": {
-    "pretty-web-console": "^0.0.1"
-  }
+  "author": "Joe Lee (https://github.com/bbmoz)"
 }

@@ -105,3 +105,13 @@ test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
   t.true(logSpyA.calledWith('%chi', 'color:blue;'))
   t.true(logSpyB.calledWith('%chi', 'color:green;'))
 })
+
+test('pwc({color:"red",size:10}).log("hi")', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc({
+    color: 'red',
+    size: 10
+  }).log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;'))
+})

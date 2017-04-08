@@ -13,6 +13,7 @@
     "build": "webpack -p",
     "pretest": "eslint src/ && npm run build",
     "test": "ava",
+    "preexample": "npm run build",
     "example": "cd example/ && webpack && http-server dist/"
   },
   "repository": {

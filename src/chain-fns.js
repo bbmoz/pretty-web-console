@@ -26,10 +26,10 @@ function chainFns (store) {
   }
 
   function size (val) {
-    if (val.length === undefined) {
-      store.appendStyle(`font-size:${val}px;`)
-    } else {
+    if (!+val) {
       store.appendStyle(`font-size:${val};`)
+    } else {
+      store.appendStyle(`font-size:${val}px;`)
     }
     return store.styleFns
   }

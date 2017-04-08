@@ -2,7 +2,7 @@
 
 > Prettier logs in your browser console!
 
-![v0.0.4](/media/v0.0.4.png)
+![v0.0.5](/media/v0.0.5.png)
 
 ## API
 
@@ -20,7 +20,7 @@ You can also do the above this way:
 pwc().large().blue().bold().underline().bg('lightgreen').log('i have a light green background, i am large and blue, and i am underlined')
 ```
 
-Notice how `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Style Names** section below.
+Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Style Names** section below.
 
 ### Config Passing
 
@@ -33,7 +33,7 @@ pwc({
 ```
 
 ## Available Style Names
-Beside supporting raw values, the following names are supported for chaining, i.e. `.blue()` and `.bold()` rather than `.color('blue')` and `.weight('bold')`.
+Beside supporting raw values, the following names are supported for chaining, i.e. `.blue()` and `.bold()` rather than `.color('blue')` and `.weight('bold')`, respectively.
 
 1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names)
 1. weight: `normal`, `bold`, `lighter`, `bolder`
