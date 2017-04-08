@@ -2,22 +2,41 @@
 
 > Prettier logs in your browser console!
 
-![v0.0.3](/media/v0.0.3.png)
+![v0.0.4](/media/v0.0.4.png)
+
+## API
+
+You can use either chaining or config passing for your desired logs.
+
+### Chaining
 
 ```javascript
-import pwc from 'pretty-web-console'
-
-pwc.blue().log('i am blue')
-
-pwc.bold().log('i am bold')
-
-pwc.color('blue').weight('bold').log('i am blue and bold')
-
-pwc.bg('lightblue').log('i have a light blue background')
-
-pwc.large().log('i am large')
-
-pwc.underline().log('i am underlined')
-
-pwc.decorate('underline').weight('large').bg('lightgreen').color('blue').bold().log('i have a light green background, i am large and blue, and i am underlined')
+pwc().size('large').color('blue').weight('bold').decorate('underline').bg('lightgreen').log('i have a light green background, i am large and blue, and i am underlined')
 ```
+
+You can also do the above this way:
+
+```javascript
+pwc().large().blue().bold().underline().bg('lightgreen').log('i have a light green background, i am large and blue, and i am underlined')
+```
+
+Notice how `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Style Names** section below.
+
+### Config Passing
+
+```javascript
+pwc({
+  color: 'blue',
+  weight: 'bold',
+  decorate: 'line-through'
+}).log('i am blue, bold, and have a line through me')
+```
+
+## Available Style Names
+Beside supporting raw values, the following names are supported for chaining, i.e. `.blue()` and `.bold()` rather than `.color('blue')` and `.weight('bold')`.
+
+1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names)
+1. weight: `normal`, `bold`, `lighter`, `bolder`
+1. size: `small`, `medium`, `large`
+1. decorate: `underline`, `overline`, `line-through`, `none`
+1. bg: *names not supported*
