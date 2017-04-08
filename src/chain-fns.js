@@ -7,6 +7,7 @@ function chainFns (store) {
 
   function log (val, log = console.log) {
     log(`%c${val}`, store.style)
+    store.style = ''
   }
 
   function color (val) {
@@ -31,10 +32,6 @@ function chainFns (store) {
       store.appendStyle(`font-size:${val};`)
     }
     return store.styleFns
-  }
-
-  function done () {
-    store.style = ''
   }
 
   const namedStyleVals = colors.concat(weights).concat(sizes)
