@@ -20,4 +20,8 @@ const sizes = [
   'small', 'medium', 'large'
 ]
 
-export { colors, weights, sizes }
+const decorates = [
+  'underline', 'overline', 'line-through', 'none'
+]
+
+export { colors, weights, sizes, decorates }

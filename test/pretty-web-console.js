@@ -80,6 +80,16 @@ test('pwc.large().color("#444").bold().bg("green").log("hi"): gray, bold, and la
   t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;'))
 })
 
-test.beforeEach(() => {
-  pwc.done()
+test('pwc.decorate("underline").log("hi"): text with underline', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc.decorate('underline').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'text-decoration:underline;'))
+})
+
+test('pwc.underline().log("hi"): text with underline', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc.underline().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'text-decoration:underline;'))
 })

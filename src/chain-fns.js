@@ -1,8 +1,8 @@
-import { colors, weights, sizes } from './named-style-vals'
+import { colors, weights, sizes, decorates } from './named-style-vals'
 
 function chainFns (store) {
   store.styleFns = {
-    log, color, weight, bg, size, done
+    log, color, weight, bg, size, decorate
   }
 
   function log (val, log = console.log) {
@@ -34,7 +34,12 @@ function chainFns (store) {
     return store.styleFns
   }
 
-  const namedStyleVals = colors.concat(weights).concat(sizes)
+  function decorate (val) {
+    store.appendStyle(`text-decoration:${val};`)
+    return store.styleFns
+  }
+
+  const namedStyleVals = colors.concat(weights).concat(sizes).concat(decorates)
   namedStyleVals.forEach(styleVal => {
     store.styleFns[styleVal] = function () {
       if (colors.includes(styleVal)) {
@@ -43,6 +48,8 @@ function chainFns (store) {
         store.appendStyle(`font-weight:${styleVal};`)
       } else if (sizes.includes(styleVal)) {
         store.appendStyle(`font-size:${styleVal};`)
+      } else if (decorates.includes(styleVal)) {
+        store.appendStyle(`text-decoration:${styleVal};`)
       }
       return store.styleFns
     }
