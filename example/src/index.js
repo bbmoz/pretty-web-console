@@ -8,9 +8,9 @@ pwc().color('blue').weight('bold').log('i am blue and bold')
 
 pwc().bg('lightblue').log('i have a light blue background')
 
-pwc().large().log('i am large')
+pwc().large().uppercase().log('i am large and uppercase')
 
-pwc().linethrough().log('i have a line through me')
+pwc().capitalize().linethrough().log('i am capitalized and have a line through me')
 
 pwc().fantasy().large().log('i am large and fantastic')
 

@@ -7,7 +7,7 @@
 
 > Prettier logs in your browser console!
 
-![v0.0.7](/media/v0.0.7.png)
+![example](/media/example.png)
 
 ## API
 
@@ -48,6 +48,7 @@ Besides supporting raw values, the following names can be used for chaining. If 
 1. decorate: `underline`, `overline`, `linethrough`, `none`
 1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
 1. style: `normal`, `italic`, `oblique`
+1. transform: `capitalize`, `uppercase`, `lowercase`
 1. bg
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
