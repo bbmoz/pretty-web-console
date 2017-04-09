@@ -1,6 +1,6 @@
 import Store from './Store'
-import chainFns from './chain-fns'
-import readConfig from './read-config'
+import chainFns from './chainFns'
+import readConfig from './readConfig'
 
 function pwc (config) {
   const store = new Store()

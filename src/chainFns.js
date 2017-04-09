@@ -1,5 +1,5 @@
-import { nameMap, colors, weights, sizes, decorates, families } from './named-style-vals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily } from './append-styles'
+import { nameMap, colors, weights, sizes, decorates, families } from './namedStyleVals'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily } from './appendStyles'
 
 function chainFns (store) {
   store.styleFns = {

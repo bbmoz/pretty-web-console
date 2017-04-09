@@ -1,5 +1,5 @@
-import { nameMap } from './named-style-vals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate } from './append-styles'
+import { nameMap } from './namedStyleVals'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate } from './appendStyles'
 
 function readConfig (store, config) {
   const styleNames = Object.keys(config)
