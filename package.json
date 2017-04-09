@@ -1,6 +1,6 @@
 {
   "name": "pretty-web-console",
-  "version": "0.0.7",
+  "version": "0.0.0-semantic-release",
   "description": "Prettier logs in your browser console!",
   "main": "dist/pretty-web-console.js",
   "files": [
@@ -10,13 +10,13 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist/",
-    "build": "webpack -p",
+    "build": "webpack -p --bail",
     "pretest": "npm run build",
     "test": "eslint src/ test/ && ava",
     "preexample": "npm run build",
     "example": "cd example/ && webpack && http-server dist/",
-    "predeploy": "npm run build",
-    "deploy": "npm version patch && git push && npm publish"
+    "prerelease": "npm run build",
+    "release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -50,25 +50,6 @@
     ],
     "babel": "inherit"
   },
-  "babel": {
-    "presets": [
-      "latest",
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "> 5%",
-              "last 2 versions"
-            ]
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
-  },
   "devDependencies": {
     "ava": "^0.19.0",
     "babel-core": "^6.24.0",
@@ -83,6 +64,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "html-webpack-plugin": "^2.28.0",
+    "semantic-release": "^6.3.2",
     "sinon": "^2.1.0",
     "webpack": "^2.3.2"
   }
