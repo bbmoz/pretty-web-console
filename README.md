@@ -50,6 +50,7 @@ Besides supporting raw values, the following names can be used for chaining. If 
 1. style: `normal`, `italic`, `oblique`
 1. transform: `capitalize`, `uppercase`, `lowercase`
 1. bg
+1. shadow
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
 

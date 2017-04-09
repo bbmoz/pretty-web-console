@@ -14,7 +14,7 @@ pwc().capitalize().linethrough().log('i am capitalized and have a line through m
 
 pwc().fantasy().large().log('i am large and fantastic')
 
-pwc().italic().size(20).log('i am italic and 20px')
+pwc().italic().size(20).shadow('4px 4px 5px lightgreen').log('i am italic, 20px, and have a shadow')
 
 pwc({
   color: 'red',
