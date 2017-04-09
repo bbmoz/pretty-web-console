@@ -6,7 +6,7 @@ pwc().family('georgia').bold().log('i am bold and georgian')
 
 pwc().color('blue').weight('bold').log('i am blue and bold')
 
-pwc().bg('lightblue').log('i have a light blue background')
+pwc().bglightblue().log('i have a light blue background')
 
 pwc().large().uppercase().log('i am large and uppercase')
 

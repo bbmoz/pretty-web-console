@@ -40,7 +40,7 @@ Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. Se
 
 ## Available Styles
 
-Besides supporting raw css values, the following names can be used for chaining. If using a config object instead, you may use these names as values.
+Besides supporting raw css values, the following names can be used for chaining. If using a config object instead, you may use these names as values. All names are lowercase.
 
 1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
 1. weight: `bold`, `lighter`, `bolder`
@@ -49,7 +49,7 @@ Besides supporting raw css values, the following names can be used for chaining.
 1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
 1. style: `italic`, `oblique`
 1. transform: `capitalize`, `uppercase`, `lowercase`
-1. bg
+1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
 1. shadow
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
