@@ -11,10 +11,12 @@
   "scripts": {
     "prebuild": "rm -rf dist/",
     "build": "webpack -p",
-    "pretest": "eslint src/ && npm run build",
-    "test": "ava",
+    "pretest": "npm run build",
+    "test": "eslint src/ && ava",
     "preexample": "npm run build",
-    "example": "cd example/ && webpack && http-server dist/"
+    "example": "cd example/ && webpack && http-server dist/",
+    "predeploy": "npm run build",
+    "deploy": "npm version patch && git push && npm publish"
   },
   "repository": {
     "type": "git",
@@ -45,12 +47,16 @@
     "require": [
       "babel-register"
     ],
-    "babel": {
-      "presets": [
-        "env",
-        "latest"
-      ]
-    }
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "latest"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
   },
   "devDependencies": {
     "ava": "^0.19.0",
