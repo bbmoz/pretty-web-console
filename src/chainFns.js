@@ -1,4 +1,4 @@
-import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms } from './namedStyleVals'
+import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms, bgs } from './namedStyleVals'
 import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow } from './appendStyles'
 
 function chainFns (store) {
@@ -73,6 +73,8 @@ function chainFns (store) {
         appendStyle(store, val)
       } else if (transforms.includes(styleVal)) {
         appendTransform(store, val)
+      } else if (bgs.includes(styleVal)) {
+        appendBg(store, val)
       }
       return store.styleFns
     }

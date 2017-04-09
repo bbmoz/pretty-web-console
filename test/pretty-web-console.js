@@ -63,6 +63,12 @@ test('pwc().bg("blue").log("hi"): text with blue background', t => {
   t.true(logSpy.calledWith('%chi', 'background-color:blue;'))
 })
 
+test('pwc().bgblue().log("hi"): text with blue background', t => {
+  t.plan(1)
+  pwc().bgblue().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'background-color:blue;'))
+})
+
 test('pwc().decorate("underline").log("hi"): text with underline', t => {
   t.plan(1)
   pwc().decorate('underline').log('hi', logSpy)

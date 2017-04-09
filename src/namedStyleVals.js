@@ -45,6 +45,12 @@ const nameMap = {
   sansserif: 'sans-serif'
 }
 
+const bgs = colors.map(color => {
+  const bgColor = `bg${color}`
+  nameMap[bgColor] = color
+  return bgColor
+})
+
 const allNames = colors
   .concat(weights)
   .concat(sizes)
@@ -52,5 +58,6 @@ const allNames = colors
   .concat(families)
   .concat(styles)
   .concat(transforms)
+  .concat(bgs)
 
-export { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms }
+export { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms, bgs }
