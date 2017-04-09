@@ -16,7 +16,8 @@
     "preexample": "npm run build",
     "example": "cd example/ && webpack && http-server dist/",
     "prerelease": "npm run build",
-    "release": "semantic-release pre && npm publish && semantic-release post"
+    "release": "semantic-release pre && npm publish && semantic-release post",
+    "commitmsg": "validate-commit-msg"
   },
   "repository": {
     "type": "git",
@@ -64,8 +65,10 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "html-webpack-plugin": "^2.28.0",
+    "husky": "^0.13.3",
     "semantic-release": "^6.3.2",
     "sinon": "^2.1.0",
+    "validate-commit-msg": "^2.12.1",
     "webpack": "^2.3.2"
   }
 }
