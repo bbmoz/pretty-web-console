@@ -30,6 +30,10 @@ function appendStyle (store, val) {
   store.appendStyle(`font-style:${val};`)
 }
 
+function appendTransform (store, val) {
+  store.appendStyle(`text-transform:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
@@ -37,5 +41,6 @@ export {
   appendSize,
   appendDecorate,
   appendFamily,
-  appendStyle
+  appendStyle,
+  appendTransform
 }

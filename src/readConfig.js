@@ -1,5 +1,5 @@
 import { nameMap } from './namedStyleVals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle } from './appendStyles'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform } from './appendStyles'
 
 function readConfig (store, config) {
   const styleNames = Object.keys(config)
@@ -27,6 +27,9 @@ function readConfig (store, config) {
         break
       case 'style':
         appendStyle(store, val)
+        break
+      case 'transform':
+        appendTransform(store, val)
         break
     }
   })

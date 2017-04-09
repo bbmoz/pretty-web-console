@@ -33,6 +33,10 @@ const styles = [
   'normal', 'italic', 'oblique'
 ]
 
+const transforms = [
+  'capitalize', 'uppercase', 'lowercase'
+]
+
 const nameMap = {
   linethrough: 'line-through',
   couriernew: 'courier new',
@@ -41,4 +45,12 @@ const nameMap = {
   sansserif: 'sans-serif'
 }
 
-export { nameMap, colors, weights, sizes, decorates, families, styles }
+const allNames = colors
+  .concat(weights)
+  .concat(sizes)
+  .concat(decorates)
+  .concat(families)
+  .concat(styles)
+  .concat(transforms)
+
+export { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms }
