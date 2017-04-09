@@ -6,7 +6,7 @@
 
 > Prettier logs in your browser console!
 
-![v0.0.5](/media/v0.0.5.png)
+![v0.0.6](/media/v0.0.6.png)
 
 ## API
 
