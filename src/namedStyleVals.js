@@ -13,7 +13,7 @@ const colors = [
 ]
 
 const weights = [
-  'normal', 'bold', 'lighter', 'bolder'
+  'bold', 'lighter', 'bolder'
 ]
 
 const sizes = [
@@ -21,7 +21,7 @@ const sizes = [
 ]
 
 const decorates = [
-  'underline', 'overline', 'linethrough', 'none'
+  'underline', 'overline', 'linethrough'
 ]
 
 const families = [
@@ -30,7 +30,7 @@ const families = [
 ]
 
 const styles = [
-  'normal', 'italic', 'oblique'
+  'italic', 'oblique'
 ]
 
 const transforms = [
