@@ -34,6 +34,10 @@ function appendTransform (store, val) {
   store.appendStyle(`text-transform:${val};`)
 }
 
+function appendShadow (store, val) {
+  store.appendStyle(`text-shadow:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
@@ -42,5 +46,6 @@ export {
   appendDecorate,
   appendFamily,
   appendStyle,
-  appendTransform
+  appendTransform,
+  appendShadow
 }

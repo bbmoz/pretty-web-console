@@ -111,6 +111,12 @@ test('pwc().transform("capitalize"): capitalized text', t => {
   t.true(logSpy.calledWith('%chi', 'text-transform:capitalize;'))
 })
 
+test('pwc().shadow("4px 4px 5px red"): text with drop shadow', t => {
+  t.plan(1)
+  pwc().shadow('4px 4px 5px red').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'text-shadow:4px 4px 5px red;'))
+})
+
 let logSpy
 test.beforeEach('setup', () => {
   logSpy = spy()

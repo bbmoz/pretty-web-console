@@ -1,9 +1,9 @@
 import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms } from './namedStyleVals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform } from './appendStyles'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow } from './appendStyles'
 
 function chainFns (store) {
   store.styleFns = {
-    log, color, weight, bg, size, decorate, family, style, transform
+    log, color, weight, bg, size, decorate, family, style, transform, shadow
   }
 
   function log (val, log = console.log) {
@@ -48,6 +48,11 @@ function chainFns (store) {
 
   function transform (val) {
     appendTransform(store, val)
+    return store.styleFns
+  }
+
+  function shadow (val) {
+    appendShadow(store, val)
     return store.styleFns
   }
 
