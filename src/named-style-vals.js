@@ -21,7 +21,20 @@ const sizes = [
 ]
 
 const decorates = [
-  'underline', 'overline', 'line-through', 'none'
+  'underline', 'overline', 'linethrough', 'none'
 ]
 
-export { colors, weights, sizes, decorates }
+const families = [
+  'arial', 'couriernew', 'georgia', 'timesnewroman', 'trebuchetms', 'verdana',
+  'serif', 'sansserif', 'monospace', 'cursive', 'fantasy'
+]
+
+const nameMap = {
+  linethrough: 'line-through',
+  couriernew: 'courier new',
+  timesnewroman: 'times new roman',
+  trebuchetms: 'trebuchet ms',
+  sansserif: 'sans-serif'
+}
+
+export { nameMap, colors, weights, sizes, decorates, families }

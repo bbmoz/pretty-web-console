@@ -38,10 +38,11 @@ Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. Se
 
 ## Available Styles
 
-Beside supporting raw values, the following names are supported for chaining.
+Beside supporting raw values, the following names are supported for chaining. If you are using a config object instead of chaining, you may  use these names as values.
 
 1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
 1. weight: `normal`, `bold`, `lighter`, `bolder`
 1. size: `small`, `medium`, `large`
-1. decorate: `underline`, `overline`, `line-through`, `none`
+1. decorate: `underline`, `overline`, `linethrough`, `none`
+1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
 1. bg

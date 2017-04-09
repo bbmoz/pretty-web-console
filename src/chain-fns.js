@@ -1,9 +1,9 @@
-import { colors, weights, sizes, decorates } from './named-style-vals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate } from './append-styles'
+import { nameMap, colors, weights, sizes, decorates, families } from './named-style-vals'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily } from './append-styles'
 
 function chainFns (store) {
   store.styleFns = {
-    log, color, weight, bg, size, decorate
+    log, color, weight, bg, size, decorate, family
   }
 
   function log (val, log = console.log) {
@@ -36,17 +36,25 @@ function chainFns (store) {
     return store.styleFns
   }
 
-  const namedStyleVals = colors.concat(weights).concat(sizes).concat(decorates)
+  function family (val) {
+    appendFamily(store, val)
+    return store.styleFns
+  }
+
+  const namedStyleVals = colors.concat(weights).concat(sizes).concat(decorates).concat(families)
   namedStyleVals.forEach(styleVal => {
     store.styleFns[styleVal] = function () {
+      const val = styleVal in nameMap ? nameMap[styleVal] : styleVal
       if (colors.includes(styleVal)) {
-        appendColor(store, styleVal)
+        appendColor(store, val)
       } else if (weights.includes(styleVal)) {
-        appendWeight(store, styleVal)
+        appendWeight(store, val)
       } else if (sizes.includes(styleVal)) {
-        appendSize(store, styleVal)
+        appendSize(store, val)
       } else if (decorates.includes(styleVal)) {
-        appendDecorate(store, styleVal)
+        appendDecorate(store, val)
+      } else if (families.includes(styleVal)) {
+        appendFamily(store, val)
       }
       return store.styleFns
     }

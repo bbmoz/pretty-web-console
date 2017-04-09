@@ -73,13 +73,6 @@ test('pwc().bg("blue").log("hi"): text with blue background', t => {
   t.true(logSpy.calledWith('%chi', 'background-color:blue;'))
 })
 
-test('pwc().large().color("#444").bold().bg("green").log("hi"): gray, bold, and large text with green background', t => {
-  t.plan(1)
-  const logSpy = spy()
-  pwc().large().color("#444").bold().bg("green").log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;'))
-})
-
 test('pwc().decorate("underline").log("hi"): text with underline', t => {
   t.plan(1)
   const logSpy = spy()
@@ -87,11 +80,11 @@ test('pwc().decorate("underline").log("hi"): text with underline', t => {
   t.true(logSpy.calledWith('%chi', 'text-decoration:underline;'))
 })
 
-test('pwc().underline().log("hi"): text with underline', t => {
+test('pwc().linethrough().log("hi"): text with line through', t => {
   t.plan(1)
   const logSpy = spy()
-  pwc().underline().log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'text-decoration:underline;'))
+  pwc().linethrough().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'text-decoration:line-through;'))
 })
 
 test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
@@ -106,12 +99,34 @@ test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
   t.true(logSpyB.calledWith('%chi', 'color:green;'))
 })
 
-test('pwc({color:"red",size:10}).log("hi")', t => {
+test('pwc({color:"red",size:10,decorate:"linethrough"}).log("hi")', t => {
   t.plan(1)
   const logSpy = spy()
   pwc({
     color: 'red',
-    size: 10
+    size: 10,
+    decorate: 'linethrough'
   }).log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;'))
+  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;'))
+})
+
+test('pwc().trebuchetms().log("hi"): text with trebuchet ms font family', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc().trebuchetms().log("hi", logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-family:trebuchet ms;'))
+})
+
+test('pwc().family("arial").log("hi"): text with arial font family', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc().family("arial").log("hi", logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-family:arial;'))
+})
+
+test('pwc().large().color("#444").bold().bg("green").underline().cursive().log("hi"): gray, bold, underlined, large, and cursive text with green background', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc().large().color("#444").bold().bg("green").underline().cursive().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;text-decoration:underline;font-family:cursive;'))
 })

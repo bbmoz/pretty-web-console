@@ -22,10 +22,15 @@ function appendDecorate (store, val) {
   store.appendStyle(`text-decoration:${val};`)
 }
 
+function appendFamily (store, val) {
+  store.appendStyle(`font-family:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
   appendBg,
   appendSize,
-  appendDecorate
+  appendDecorate,
+  appendFamily
 }
