@@ -11,7 +11,7 @@
 
 ## API
 
-You can either pass a config or use the chaining api for your desired logs.
+You can either pass a config or use the chaining api for your desired logs. For example,
 
 ### 1. Config
 
@@ -19,8 +19,9 @@ You can either pass a config or use the chaining api for your desired logs.
 pwc({
   color: 'blue',
   weight: 'bold',
-  decorate: 'line-through'
-}).log('i am blue, bold, and have a line through me')
+  size: 'large',
+  decorate: 'linethrough'
+}).log('hello')
 ```
 
 ### 2. Chaining
@@ -39,7 +40,7 @@ Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. Se
 
 ## Available Styles
 
-Beside supporting raw values, the following names are supported for chaining. If you are using a config object instead of chaining, you may  use these names as values.
+Besides supporting raw values, the following names can be used for chaining. If using a config object instead, you may use these names as values.
 
 1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
 1. weight: `normal`, `bold`, `lighter`, `bolder`
