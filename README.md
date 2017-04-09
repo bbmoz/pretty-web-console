@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/pretty-web-console.svg)](https://badge.fury.io/js/pretty-web-console)
 [![Build Status](https://travis-ci.org/bbmoz/pretty-web-console.svg)](https://travis-ci.org/bbmoz/pretty-web-console)
 [![Code Climate](https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg)](https://codeclimate.com/github/bbmoz/pretty-web-console)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
 
 > Prettier logs in your browser console!
 
@@ -10,7 +11,7 @@
 
 ## API
 
-You can use either pass a config or utilize the chaining api for your desired logs.
+You can either pass a config or use the chaining api for your desired logs.
 
 ### 1. Config
 
@@ -46,3 +47,5 @@ Beside supporting raw values, the following names are supported for chaining. If
 1. decorate: `underline`, `overline`, `linethrough`, `none`
 1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
 1. bg
+
+[![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
