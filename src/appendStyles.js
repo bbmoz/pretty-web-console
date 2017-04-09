@@ -26,11 +26,16 @@ function appendFamily (store, val) {
   store.appendStyle(`font-family:${val};`)
 }
 
+function appendStyle (store, val) {
+  store.appendStyle(`font-style:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
   appendBg,
   appendSize,
   appendDecorate,
-  appendFamily
+  appendFamily,
+  appendStyle
 }

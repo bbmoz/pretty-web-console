@@ -7,7 +7,7 @@
 
 > Prettier logs in your browser console!
 
-![v0.0.6](/media/v0.0.6.png)
+![v0.0.7](/media/v0.0.7.png)
 
 ## API
 
@@ -26,13 +26,13 @@ pwc({
 ### 2. Chaining
 
 ```javascript
-pwc().size('large').color('blue').weight('bold').decorate('underline').bg('lightgreen').log('i have a light green background, i am large and blue, and i am underlined')
+pwc().size('large').color('blue').weight('bold').bg('lightgreen').log('hello')
 ```
 
 You can also do the above this way:
 
 ```javascript
-pwc().large().blue().bold().underline().bg('lightgreen').log('i have a light green background, i am large and blue, and i am underlined')
+pwc().large().blue().bold().bg('lightgreen').log('hello')
 ```
 
 Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Styles** section below.
@@ -46,6 +46,7 @@ Beside supporting raw values, the following names are supported for chaining. If
 1. size: `small`, `medium`, `large`
 1. decorate: `underline`, `overline`, `linethrough`, `none`
 1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
+1. style: `normal`, `italic`, `oblique`
 1. bg
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)

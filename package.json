@@ -8,7 +8,7 @@
     "prebuild": "rm -rf dist/",
     "build": "webpack -p",
     "pretest": "npm run build",
-    "test": "eslint src/ && ava",
+    "test": "eslint src/ test/ && ava",
     "preexample": "npm run build",
     "example": "cd example/ && webpack && http-server dist/",
     "predeploy": "npm run build",

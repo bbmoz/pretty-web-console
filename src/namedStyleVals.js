@@ -29,6 +29,10 @@ const families = [
   'serif', 'sansserif', 'monospace', 'cursive', 'fantasy'
 ]
 
+const styles = [
+  'normal', 'italic', 'oblique'
+]
+
 const nameMap = {
   linethrough: 'line-through',
   couriernew: 'courier new',
@@ -37,4 +41,4 @@ const nameMap = {
   sansserif: 'sans-serif'
 }
 
-export { nameMap, colors, weights, sizes, decorates, families }
+export { nameMap, colors, weights, sizes, decorates, families, styles }

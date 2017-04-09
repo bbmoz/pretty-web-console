@@ -2,6 +2,39 @@ import test from 'ava'
 import { spy } from 'sinon'
 import pwc from './../dist/pretty-web-console'
 
+test('pwc({...}).log("hi"): config', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc({
+    color: 'red',
+    size: 10,
+    decorate: 'linethrough',
+    weight: 'bold',
+    family: 'cursive',
+    style: 'italic'
+  }).log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;font-weight:bold;font-family:cursive;font-style:italic;'))
+})
+
+test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
+  t.plan(2)
+  const logSpyA = spy()
+  const logSpyB = spy()
+  const a = pwc().blue()
+  const b = pwc().green()
+  a.log('hi', logSpyA)
+  b.log('hi', logSpyB)
+  t.true(logSpyA.calledWith('%chi', 'color:blue;'))
+  t.true(logSpyB.calledWith('%chi', 'color:green;'))
+})
+
+test('pwc().large().color("#444").bold().bg("green").underline().cursive().italic().log("hi"): combo text', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc().large().color('#444').bold().bg('green').underline().cursive().italic().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;text-decoration:underline;font-family:cursive;font-style:italic;'))
+})
+
 test('pwc().log("hi"): plain text', t => {
   t.plan(2)
   const logSpy = spy()
@@ -10,7 +43,7 @@ test('pwc().log("hi"): plain text', t => {
   t.is(styleFns, undefined)
 })
 
-test('pwc().color("red").log("hi"): red text', t=> {
+test('pwc().color("red").log("hi"): red text', t => {
   t.plan(1)
   const logSpy = spy()
   pwc().color('red').log('hi', logSpy)
@@ -87,46 +120,30 @@ test('pwc().linethrough().log("hi"): text with line through', t => {
   t.true(logSpy.calledWith('%chi', 'text-decoration:line-through;'))
 })
 
-test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
-  t.plan(2)
-  const logSpyA = spy()
-  const logSpyB = spy()
-  const a = pwc().blue()
-  const b = pwc().green()
-  a.log('hi', logSpyA)
-  b.log('hi', logSpyB)
-  t.true(logSpyA.calledWith('%chi', 'color:blue;'))
-  t.true(logSpyB.calledWith('%chi', 'color:green;'))
-})
-
-test('pwc({color:"red",size:10,decorate:"linethrough"}).log("hi")', t => {
-  t.plan(1)
-  const logSpy = spy()
-  pwc({
-    color: 'red',
-    size: 10,
-    decorate: 'linethrough'
-  }).log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;'))
-})
-
 test('pwc().trebuchetms().log("hi"): text with trebuchet ms font family', t => {
   t.plan(1)
   const logSpy = spy()
-  pwc().trebuchetms().log("hi", logSpy)
+  pwc().trebuchetms().log('hi', logSpy)
   t.true(logSpy.calledWith('%chi', 'font-family:trebuchet ms;'))
 })
 
 test('pwc().family("arial").log("hi"): text with arial font family', t => {
   t.plan(1)
   const logSpy = spy()
-  pwc().family("arial").log("hi", logSpy)
+  pwc().family('arial').log('hi', logSpy)
   t.true(logSpy.calledWith('%chi', 'font-family:arial;'))
 })
 
-test('pwc().large().color("#444").bold().bg("green").underline().cursive().log("hi"): gray, bold, underlined, large, and cursive text with green background', t => {
+test('pwc().italic().log("hi"): italic text', t => {
   t.plan(1)
   const logSpy = spy()
-  pwc().large().color("#444").bold().bg("green").underline().cursive().log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'font-size:large;color:#444;font-weight:bold;background-color:green;text-decoration:underline;font-family:cursive;'))
+  pwc().italic().log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-style:italic;'))
+})
+
+test('pwc().style("italic").log("hi"): italic text', t => {
+  t.plan(1)
+  const logSpy = spy()
+  pwc().style('italic').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'font-style:italic;'))
 })
