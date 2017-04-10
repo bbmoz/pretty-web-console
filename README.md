@@ -1,6 +1,6 @@
 # Pretty Web Console
 
-[![npm version](https://badge.fury.io/js/pretty-web-console.svg)](https://badge.fury.io/js/pretty-web-console)
+[![npm version](https://badge.fury.io/js/pretty-web-console.svg)](https://www.npmjs.com/package/pretty-web-console)
 [![Build Status](https://travis-ci.org/bbmoz/pretty-web-console.svg)](https://travis-ci.org/bbmoz/pretty-web-console)
 [![Code Climate](https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg)](https://codeclimate.com/github/bbmoz/pretty-web-console)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
@@ -77,4 +77,4 @@ For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pa
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/bbmoz/pretty-web-console)
