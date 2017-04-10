@@ -3,10 +3,10 @@ import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, append
 import loggers from './loggers'
 
 function chainFns (store) {
-  const { log, warn, error, info } = loggers(store)
+  const { log, warn, error, info, debug } = loggers(store)
 
   store.styleFns = {
-    log, warn, error, info, color, weight, bg, size, decorate, family, style, transform, shadow
+    log, warn, error, info, debug, color, weight, bg, size, decorate, family, style, transform, shadow
   }
 
   function color (val) {

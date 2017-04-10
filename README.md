@@ -56,7 +56,7 @@ Besides supporting raw css values, the following names can be used for chaining.
 
 ## Log Levels
 
-`.log()`, `.warn()`, `.error()`, and `.info()` are available.
+`.log()`, `.warn()`, `.error()`, `.info()`, and `.debug()` are available.
 
 ## Custom Logger
 

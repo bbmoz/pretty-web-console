@@ -26,7 +26,8 @@ function loggers (store) {
     log: out(console.log),
     warn: out(console.warn),
     error: out(console.error),
-    info: out(console.info)
+    info: out(console.info),
+    debug: out(console.debug)
   }
 }
 

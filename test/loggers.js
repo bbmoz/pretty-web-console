@@ -30,6 +30,13 @@ test('pwc().info("hi"): info text', t => {
   t.is(out, undefined)
 })
 
+test('pwc().debug("hi"): debug text', t => {
+  t.plan(2)
+  const out = pwc().debug('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', ''))
+  t.is(out, undefined)
+})
+
 test('pwc().blue().underline().log("hi", customLog): text with customLog', t => {
   t.plan(2)
   const customLog = function (text, styles) {
