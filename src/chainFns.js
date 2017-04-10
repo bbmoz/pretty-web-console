@@ -1,29 +1,12 @@
 import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms, bgs } from './namedStyleVals'
 import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow } from './appendStyles'
+import loggers from './loggers'
 
 function chainFns (store) {
+  const { log, warn, error, info } = loggers(store)
+
   store.styleFns = {
     log, warn, error, info, color, weight, bg, size, decorate, family, style, transform, shadow
-  }
-
-  function log (val, log = console.log) {
-    log(`%c${val}`, store.style)
-    store.style = ''
-  }
-
-  function warn (val, warn = console.warn) {
-    warn(`%c${val}`, store.style)
-    store.style = ''
-  }
-
-  function error (val, error = console.error) {
-    error(`%c${val}`, store.style)
-    store.style = ''
-  }
-
-  function info (val, info = console.info) {
-    info(`%c${val}`, store.style)
-    store.style = ''
   }
 
   function color (val) {
