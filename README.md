@@ -33,7 +33,7 @@ pwc().size('large').color('blue').weight('bold').bg('lightgreen').log('hello')
 You can also do the above this way:
 
 ```javascript
-pwc().large().blue().bold().bg('lightgreen').log('hello')
+pwc().large().blue().bold().bglightgreen().log('hello')
 ```
 
 Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Styles** section below.
