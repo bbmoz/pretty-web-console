@@ -52,6 +52,15 @@ test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {
   t.true(logSpyB.calledWith('%chi', 'color:green;'))
 })
 
+test('a=pwc().blue();a.log("hi");a.log("hello"): reusable', t => {
+  t.plan(2)
+  const a = pwc().blue()
+  a.log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'color:blue;'))
+  a.log('hello', logSpy)
+  t.true(logSpy.calledWith('%chi', 'color:blue;'))
+})
+
 let logSpy
 test.beforeEach('setup', () => {
   logSpy = spy()
