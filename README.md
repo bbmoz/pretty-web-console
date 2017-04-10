@@ -45,14 +45,14 @@ Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. Se
 
 Besides supporting raw css values, the following can be used for chaining, i.e. `.bg('red')` is the same as `.bgred()`. If using a config object instead, you can also use them as values, i.e. `decorate: 'line-through'` is the same as `decorate: 'linethrough'`.
 
-1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
+1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased
 1. weight: `bold`, `lighter`, `bolder`
 1. size: `small`, `medium`, `large`
 1. decorate: `underline`, `overline`, `linethrough`
 1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
 1. style: `italic`, `oblique`
 1. transform: `capitalize`, `uppercase`, `lowercase`
-1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) prefixed with `bg`
+1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased and prefixed with `bg`
 1. shadow
 
 ## Log Levels
