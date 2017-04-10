@@ -54,6 +54,7 @@ Besides supporting raw css values, the following can be used for chaining, i.e. 
 1. transform: `capitalize`, `uppercase`, `lowercase`
 1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased and prefixed with `bg`
 1. shadow
+1. padding
 
 ## Log Levels
 

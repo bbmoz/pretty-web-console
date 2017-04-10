@@ -1,14 +1,12 @@
 import pwc from './../../dist/pretty-web-console'
 
-pwc().family('georgia').bold().log('i am bold and georgian')
-
-pwc().large().uppercase().log('i am large and uppercase')
-
 pwc().turquoise().info('i am turquoise and an info message')
+
+pwc().family('georgia').bold().padding('25px').log('i am padded, bold, and georgian')
 
 pwc().capitalize().linethrough().log('i am capitalized and have a line through me')
 
-pwc().fantasy().large().log('i am large and fantastic')
+pwc().fantasy().large().uppercase().log('i am large, fantastic, and uppercase')
 
 pwc().italic().size(20).shadow('4px 4px 5px lightgreen').log('i am italic, 20px, and have a shadow')
 

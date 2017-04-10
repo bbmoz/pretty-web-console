@@ -13,9 +13,10 @@ test('pwc({...}).log("hi"): config', t => {
     family: 'cursive',
     style: 'italic',
     transform: 'capitalize',
-    shadow: '2px 2px 1px #aaa'
+    shadow: '2px 2px 1px #aaa',
+    padding: '10px'
   }).log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;background-color:gray;font-weight:bold;font-family:cursive;font-style:italic;text-transform:capitalize;text-shadow:2px 2px 1px #aaa;'))
+  t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;background-color:gray;font-weight:bold;font-family:cursive;font-style:italic;text-transform:capitalize;text-shadow:2px 2px 1px #aaa;padding:10px;'))
 })
 
 test('pwc()...log("hi"): log chaining', t => {
@@ -30,8 +31,9 @@ test('pwc()...log("hi"): log chaining', t => {
     .italic()
     .lowercase()
     .shadow('2px 2px 1px #aaa')
+    .padding('10px')
     .log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', 'font-size:large;color:orange;font-weight:bold;background-color:green;text-decoration:underline;font-family:cursive;font-style:italic;text-transform:lowercase;text-shadow:2px 2px 1px #aaa;'))
+  t.true(logSpy.calledWith('%chi', 'font-size:large;color:orange;font-weight:bold;background-color:green;text-decoration:underline;font-family:cursive;font-style:italic;text-transform:lowercase;text-shadow:2px 2px 1px #aaa;padding:10px;'))
 })
 
 test('a=pwc().blue();b=pwc().green();a.log("hi");b.log("hi"): stateless', t => {

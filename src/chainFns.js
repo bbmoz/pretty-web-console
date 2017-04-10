@@ -1,12 +1,12 @@
 import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms, bgs } from './namedStyleVals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow } from './appendStyles'
+import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow, appendPadding } from './appendStyles'
 import loggers from './loggers'
 
 function chainFns (store) {
   const { log, warn, error, info, debug } = loggers(store)
 
   store.styleFns = {
-    log, warn, error, info, debug, color, weight, bg, size, decorate, family, style, transform, shadow
+    log, warn, error, info, debug, color, weight, bg, size, decorate, family, style, transform, shadow, padding
   }
 
   function color (val) {
@@ -51,6 +51,11 @@ function chainFns (store) {
 
   function shadow (val) {
     appendShadow(store, val)
+    return store.styleFns
+  }
+
+  function padding (val) {
+    appendPadding(store, val)
     return store.styleFns
   }
 

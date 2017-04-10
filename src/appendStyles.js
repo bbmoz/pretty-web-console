@@ -38,6 +38,10 @@ function appendShadow (store, val) {
   store.appendStyle(`text-shadow:${val};`)
 }
 
+function appendPadding (store, val) {
+  store.appendStyle(`padding:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
@@ -47,5 +51,6 @@ export {
   appendFamily,
   appendStyle,
   appendTransform,
-  appendShadow
+  appendShadow,
+  appendPadding
 }

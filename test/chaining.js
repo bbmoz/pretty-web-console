@@ -104,16 +104,22 @@ test('pwc().capitalize().log("hi"): capitalized text', t => {
   t.true(logSpy.calledWith('%chi', 'text-transform:capitalize;'))
 })
 
-test('pwc().transform("capitalize"): capitalized text', t => {
+test('pwc().transform("capitalize").log("hi"): capitalized text', t => {
   t.plan(1)
   pwc().transform('capitalize').log('hi', logSpy)
   t.true(logSpy.calledWith('%chi', 'text-transform:capitalize;'))
 })
 
-test('pwc().shadow("4px 4px 5px red"): text with drop shadow', t => {
+test('pwc().shadow("4px 4px 5px red").log("hi"): text with drop shadow', t => {
   t.plan(1)
   pwc().shadow('4px 4px 5px red').log('hi', logSpy)
   t.true(logSpy.calledWith('%chi', 'text-shadow:4px 4px 5px red;'))
+})
+
+test('pwc().padding("10px").log("hi"): text with padding', t => {
+  t.plan(1)
+  pwc().padding('10px').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'padding:10px;'))
 })
 
 let logSpy
