@@ -12,7 +12,7 @@
 
 ## API
 
-You can either pass a config or use the chaining api for your desired logs. For example,
+You can either pass a config or use the chaining api for your desired logs. See the **Available Styles** section for options.
 
 ### 1. Config
 
@@ -25,25 +25,17 @@ pwc({
 }).log('hello')
 ```
 
-The keys are shorthands for their css counterparts. See **Available Styles**.
-
 ### 2. Chaining
 
 ```javascript
-pwc().size('large').color('blue').weight('bold').bg('lightgreen').log('hello')
+pwc().size('large').weight('bold').bg('lightgreen').log('hi')
+
+pwc().large().bold().bglightgreen().log('hi')
 ```
-
-You can also do the above this way:
-
-```javascript
-pwc().large().blue().bold().bglightgreen().log('hello')
-```
-
-Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See **Available Styles** for more substitutions.
 
 ## Available Styles
 
-Besides supporting raw css values, the following can be used for chaining, i.e. `.bg('red')` is the same as `.bgred()`. If using a config object instead, you can also use them as values, i.e. `decorate: 'line-through'` is the same as `decorate: 'linethrough'`.
+Everything to the right of the colon are used for shorthand chaining i.e. `.bold()` and `.cursive()`. Everything to the left are used as keys in chaining and configs i.e. `.weight('bold')` or `{weight: 'bold'}`. All keys support css values.
 
 1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased
 1. weight: `bold`, `lighter`, `bolder`
@@ -58,13 +50,32 @@ Besides supporting raw css values, the following can be used for chaining, i.e. 
 1. margin
 1. css
 
+### Examples
+
+All of these accomplish the same thing:
+
+```javascript
+/* 1. config */
+pwc({ bg: 'red' })
+pwc({ bg: '#f00' })
+pwc({ bg: 'rgb(255,0,0)' })
+
+/* 2. chaining */
+pwc().bg('red')
+pwc().bg('#f00')
+pwc().bg('rgb(255,0,0)' })
+pwc().bgred()
+```
+
+As shown above, any css value can be used, unless you are using the shorthand chaining api i.e. `.bgred()` which doesn't take any arguments.
+
 ## Log Levels
 
-`.log()`, `.warn()`, `.error()`, `.info()`, and `.debug()` are available.
+`.log()`, `.warn()`, `.error()`, `.info()`, and `.debug()` are supported.
 
 ## Custom Logger
 
-By default, the logger used is the standard browser console. But, you may pass in your own logger if you want for any level.
+By default, the logger used is the standard browser console. But, you may pass in your own logger if you want!
 
 For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pass the message and a css styles object as arguments to `customWarnFn`. The styles object for the example would look like this:
 
