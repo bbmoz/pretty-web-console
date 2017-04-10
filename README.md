@@ -45,6 +45,9 @@ const twinCoolLogger = pwc().large().bold().bglightgreen()
 // both output the same styled logs
 coolLogger.log('hi')
 twinCoolLogger.log('hi')
+
+// you can also mix-and-match
+pwc().size('large').bold().log('hi again')
 ```
 
 ## Available Styles
