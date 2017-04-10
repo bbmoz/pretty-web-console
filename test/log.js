@@ -23,6 +23,13 @@ test('.error("hi"): error text', t => {
   t.is(out, undefined)
 })
 
+test('.info("hi"): info text', t => {
+  t.plan(2)
+  const out = pwc().info('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', ''))
+  t.is(out, undefined)
+})
+
 let logSpy
 test.beforeEach('setup', () => {
   logSpy = spy()
