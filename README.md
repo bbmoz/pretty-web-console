@@ -56,6 +56,7 @@ Besides supporting raw css values, the following can be used for chaining, i.e. 
 1. shadow
 1. padding
 1. margin
+1. css
 
 ## Log Levels
 

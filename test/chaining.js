@@ -128,6 +128,12 @@ test('pwc().margin("10px").log("hi"): text with margin', t => {
   t.true(logSpy.calledWith('%chi', 'margin:10px;'))
 })
 
+test('pwc().css("color: blue").log("hi"): text with custom css', t => {
+  t.plan(1)
+  pwc().css('color: blue').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'color:blue;'))
+})
+
 let logSpy
 test.beforeEach('setup', () => {
   logSpy = spy()

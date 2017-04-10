@@ -46,6 +46,14 @@ function appendMargin (store, val) {
   store.appendStyle(`margin:${val};`)
 }
 
+function appendCss (store, val) {
+  let style = val.replace(/\s/g, '')
+  if (style.slice(-1) !== ';') {
+    style += ';'
+  }
+  store.appendStyle(style)
+}
+
 export {
   appendColor,
   appendWeight,
@@ -57,5 +65,6 @@ export {
   appendTransform,
   appendShadow,
   appendPadding,
-  appendMargin
+  appendMargin,
+  appendCss
 }
