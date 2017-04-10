@@ -4,9 +4,9 @@ pwc().blue().log('i am blue')
 
 pwc().family('georgia').bold().log('i am bold and georgian')
 
-pwc().color('blue').weight('bold').log('i am blue and bold')
+pwc().color('blue').weight('bold').warn('i am blue, bold, and a warning')
 
-pwc().bglightblue().log('i have a light blue background')
+pwc().pink().bgdarkgray().error('i am pink, an error, and have a dark gray background')
 
 pwc().large().uppercase().log('i am large and uppercase')
 

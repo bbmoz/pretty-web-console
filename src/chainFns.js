@@ -3,11 +3,21 @@ import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, append
 
 function chainFns (store) {
   store.styleFns = {
-    log, color, weight, bg, size, decorate, family, style, transform, shadow
+    log, warn, error, color, weight, bg, size, decorate, family, style, transform, shadow
   }
 
   function log (val, log = console.log) {
     log(`%c${val}`, store.style)
+    store.style = ''
+  }
+
+  function warn (val, warn = console.warn) {
+    warn(`%c${val}`, store.style)
+    store.style = ''
+  }
+
+  function error (val, error = console.error) {
+    error(`%c${val}`, store.style)
     store.style = ''
   }
 

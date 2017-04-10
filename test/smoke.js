@@ -18,7 +18,7 @@ test('pwc({...}).log("hi"): config', t => {
   t.true(logSpy.calledWith('%chi', 'color:red;font-size:10px;text-decoration:line-through;background-color:gray;font-weight:bold;font-family:cursive;font-style:italic;text-transform:capitalize;text-shadow:2px 2px 1px #aaa;'))
 })
 
-test('pwc()...log("hi"): chaining', t => {
+test('pwc()...log("hi"): log chaining', t => {
   t.plan(1)
   pwc()
     .large()

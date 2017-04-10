@@ -2,13 +2,6 @@ import test from 'ava'
 import { spy } from 'sinon'
 import pwc from './../dist/pretty-web-console'
 
-test('pwc().log("hi"): plain text', t => {
-  t.plan(2)
-  const styleFns = pwc().log('hi', logSpy)
-  t.true(logSpy.calledWith('%chi', ''))
-  t.is(styleFns, undefined)
-})
-
 test('pwc().color("red").log("hi"): red text', t => {
   t.plan(1)
   pwc().color('red').log('hi', logSpy)

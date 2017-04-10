@@ -52,6 +52,10 @@ Besides supporting raw css values, the following names can be used for chaining.
 1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
 1. shadow
 
+## Log Levels
+
+You can utilize `.log()`, `.warn()`, and `.error()`. By default, the logger used is the standard browser console. But, you may pass in your own logger if you want for any level. For example, `.warn('hi', customWarn)`.
+
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.em2hiij8p46d)
