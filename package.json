@@ -1,7 +1,7 @@
 {
   "name": "pretty-web-console",
-  "version": "0.0.0-semantic-release",
-  "description": "Prettier logs in your browser console!",
+  "version": "0.0.0-development",
+  "description": "Bored of console.log? It's time to prettify it!",
   "main": "dist/pretty-web-console.js",
   "files": [
     "dist/",
@@ -29,7 +29,13 @@
     "log",
     "debug",
     "color",
-    "browser"
+    "browser",
+    "pwc",
+    "logger",
+    "output",
+    "web",
+    "trace",
+    "console.log"
   ],
   "author": "Joe Lee <https://github.com/bbmoz>",
   "license": "MIT",
