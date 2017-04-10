@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/bbmoz/pretty-web-console.svg)](https://travis-ci.org/bbmoz/pretty-web-console)
 [![Code Climate](https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg)](https://codeclimate.com/github/bbmoz/pretty-web-console)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.em2hiij8p46d)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/bbmoz/pretty-web-console/releases)
 
 > Bored of console.log? It's time to prettify it!
 
@@ -80,7 +80,7 @@ pwc({ bg: 'rgb(255,0,0)' })
 /* 2. chaining */
 pwc().bg('red')
 pwc().bg('#f00')
-pwc().bg('rgb(255,0,0)' })
+pwc().bg('rgb(255,0,0)')
 pwc().bgred()
 ```
 
