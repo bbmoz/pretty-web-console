@@ -32,7 +32,7 @@ const myLogger = pwc({
   decorate: 'linethrough'
 })
 
-// now you can re-use your sylized logger
+// now you can re-use your stylized logger
 myLogger.log('hello')
 ```
 
@@ -47,7 +47,7 @@ coolLogger.log('hi')
 twinCoolLogger.log('hi')
 
 // you can also mix-and-match
-pwc().size('large').bold().log('hi again')
+pwc({ size: 'large' }).bold().bg('lightgreen').log('hi again')
 ```
 
 ## Available Styles
