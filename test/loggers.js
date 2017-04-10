@@ -9,25 +9,37 @@ test('pwc().log("hi"): plain text', t => {
   t.is(out, undefined)
 })
 
-test('.warn("hi"): warn text', t => {
+test('pwc().warn("hi"): warn text', t => {
   t.plan(2)
   const out = pwc().warn('hi', logSpy)
   t.true(logSpy.calledWith('%chi', ''))
   t.is(out, undefined)
 })
 
-test('.error("hi"): error text', t => {
+test('pwc().error("hi"): error text', t => {
   t.plan(2)
   const out = pwc().error('hi', logSpy)
   t.true(logSpy.calledWith('%chi', ''))
   t.is(out, undefined)
 })
 
-test('.info("hi"): info text', t => {
+test('pwc().info("hi"): info text', t => {
   t.plan(2)
   const out = pwc().info('hi', logSpy)
   t.true(logSpy.calledWith('%chi', ''))
   t.is(out, undefined)
+})
+
+test('pwc().blue().underline().log("hi", customLog): text with customLog', t => {
+  t.plan(2)
+  const customLog = function (text, styles) {
+    t.is(text, 'hi')
+    t.deepEqual(styles, {
+      color: 'blue',
+      'text-decoration': 'underline'
+    })
+  }
+  pwc().blue().underline().log('hi', customLog)
 })
 
 let logSpy

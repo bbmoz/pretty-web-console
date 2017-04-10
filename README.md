@@ -24,6 +24,8 @@ pwc({
 }).log('hello')
 ```
 
+The keys are shorthands for their css counterparts. See **Available Styles**.
+
 ### 2. Chaining
 
 ```javascript
@@ -36,7 +38,7 @@ You can also do the above this way:
 pwc().large().blue().bold().bglightgreen().log('hello')
 ```
 
-Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See the **Available Styles** section below.
+Notice `.size('large')` is `.large()` and `.color('blue')` is `.blue()`, etc. See **Available Styles** for more substitutions.
 
 ## Available Styles
 
@@ -54,7 +56,21 @@ Besides supporting raw css values, the following names can be used for chaining.
 
 ## Log Levels
 
-You can utilize `.log()`, `.warn()`, `.error()`, and `.info()`. By default, the logger used is the standard browser console. But, you may pass in your own logger if you want for any level. For example, `.warn('hi', customWarn)` as long as `customWarn` takes a message in its first argument.
+`.log()`, `.warn()`, `.error()`, and `.info()` are available.
+
+## Custom Logger
+
+By default, the logger used is the standard browser console. But, you may pass in your own logger if you want for any level.
+
+For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pass the message and a css styles object as arguments to `customWarnFn`. The key-value pairs are valid css properties. The styles object would look like this:
+
+```javascript
+{
+  color: 'blue',
+  'font-weight': 'bold',
+  'text-decoration': 'underline'
+}
+```
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
 
