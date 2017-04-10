@@ -42,6 +42,10 @@ function appendPadding (store, val) {
   store.appendStyle(`padding:${val};`)
 }
 
+function appendMargin (store, val) {
+  store.appendStyle(`margin:${val};`)
+}
+
 export {
   appendColor,
   appendWeight,
@@ -52,5 +56,6 @@ export {
   appendStyle,
   appendTransform,
   appendShadow,
-  appendPadding
+  appendPadding,
+  appendMargin
 }

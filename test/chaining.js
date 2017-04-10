@@ -122,6 +122,12 @@ test('pwc().padding("10px").log("hi"): text with padding', t => {
   t.true(logSpy.calledWith('%chi', 'padding:10px;'))
 })
 
+test('pwc().margin("10px").log("hi"): text with margin', t => {
+  t.plan(1)
+  pwc().margin('10px').log('hi', logSpy)
+  t.true(logSpy.calledWith('%chi', 'margin:10px;'))
+})
+
 let logSpy
 test.beforeEach('setup', () => {
   logSpy = spy()
