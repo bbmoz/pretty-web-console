@@ -10,27 +10,41 @@
 
 ![example](/media/example.png)
 
-## API
+## Install
 
-You can either pass a config or use the chaining api for your desired logs. See the **Available Styles** section for options.
+```bash
+$ npm install --save pretty-web-console
+```
+
+## Usage
+
+You can either pass a config or use chaining for your desired logs. See the **Available Styles** section for options.
 
 ### 1. Config
 
 ```javascript
-pwc({
+import pwc from 'pretty-web-console'
+
+const myLogger = pwc({
   color: 'blue',
   weight: 'bold',
   size: 'large',
   decorate: 'linethrough'
-}).log('hello')
+})
+
+// now you can re-use your sylized logger
+myLogger.log('hello')
 ```
 
 ### 2. Chaining
 
 ```javascript
-pwc().size('large').weight('bold').bg('lightgreen').log('hi')
+const coolLogger = pwc().size('large').weight('bold').bg('lightgreen')
+const twinCoolLogger = pwc().large().bold().bglightgreen()
 
-pwc().large().bold().bglightgreen().log('hi')
+// both output the same styled logs
+coolLogger.log('hi')
+twinCoolLogger.log('hi')
 ```
 
 ## Available Styles
@@ -87,6 +101,6 @@ For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pa
 }
 ```
 
-[![NPM](https://nodei.co/npm/pretty-web-console.png?downloads=true)](https://www.npmjs.com/package/pretty-web-console)
+[![NPM](https://nodei.co/npm/pretty-web-console.png?compact=true)](https://www.npmjs.com/package/pretty-web-console)
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/bbmoz/pretty-web-console)
