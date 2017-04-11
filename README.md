@@ -10,7 +10,7 @@
 
 ![example](/media/example.png)
 
-## Install
+## Get Started
 
 ```bash
 $ npm install --save pretty-web-console
@@ -18,83 +18,95 @@ $ npm install --save pretty-web-console
 
 ## Usage
 
-You can either pass a config or use chaining for your desired logs. See the **Available Styles** section for options.
+You can use the rich **chaining** api and/or pass a **config** for your desired logs. It's easy!
 
-### 1. Config
+### Chaining
 
 ```javascript
 import pwc from 'pretty-web-console'
 
-const myLogger = pwc({
+// configure your stylized loggers
+const loggerA = pwc().size('large').weight('bold')
+const loggerB = pwc().large().bold()
+
+// log anything!
+loggerA.log('hi')
+loggerB.log('hi')
+
+// you can even extend your loggers
+loggerA.fantasy().underline().info('i am back')
+```
+
+### Config
+
+```javascript
+// pass in a config object
+const logger = pwc({
   color: 'blue',
   weight: 'bold',
   size: 'large',
   decorate: 'linethrough'
 })
 
-// now you can re-use your stylized logger
-myLogger.log('hello')
+// log it!
+logger.log('hi')
+
+// feel free to mix-and-match between different methods
+pwc({ color: 'green' }).size('large').bold().log('hi again')
 ```
 
-### 2. Chaining
+## Properties
 
-```javascript
-const coolLogger = pwc().size('large').weight('bold').bg('lightgreen')
-const twinCoolLogger = pwc().large().bold().bglightgreen()
+All properies below are available for chaining. But, only those marked with an asterisk `*` are supported by the config. These also accept css values, while the properties without an `*` don't take any arguments i.e. `blue()` and `bold()`.
 
-// both output the same styled logs
-coolLogger.log('hi')
-twinCoolLogger.log('hi')
-
-// you can also mix-and-match
-pwc({ size: 'large' }).bold().bg('lightgreen').log('hi again')
-```
-
-## Available Styles
-
-Everything to the right of the colon are used for shorthand chaining i.e. `.bold()` and `.cursive()`. Everything to the left are used as keys in chaining and configs i.e. `.weight('bold')` or `{weight: 'bold'}`. All keys support css values.
-
-1. color: [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased
-1. weight: `bold`, `lighter`, `bolder`
-1. size: `small`, `medium`, `large`
-1. decorate: `underline`, `overline`, `linethrough`
-1. family: `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
-1. style: `italic`, `oblique`
-1. transform: `capitalize`, `uppercase`, `lowercase`
-1. bg: `bgblue`, `bgred`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased and prefixed with `bg`
-1. shadow
-1. padding
-1. margin
-1. css
+* `blue`, `red`, `turquoise`, `aquamarine`, etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased
+* color*
+* `bold`, `lighter`, `bolder`
+* weight*
+* `small`, `medium`, `large`
+* size*
+* `underline`, `overline`, `linethrough`
+* decorate*
+* `arial`, `couriernew`, `georgia`, `timesnewroman`, `trebuchetms`, `verdana`, `serif`, `sansserif`, `monospace`, `cursive`, `fantasy`
+* family*
+* `italic`, `oblique`
+* style*
+* `capitalize`, `uppercase`, `lowercase`
+* transform*
+* `bgblue`, `bgred`, `bgturquoise`, `bgaquamarine` etc for [all web colors](https://en.wikipedia.org/wiki/Web_colors#X11_color_names) lowercased and prefixed with `bg`
+* bg*
+* shadow*
+* padding*
+* margin*
+* css*
 
 ### Examples
 
-All of these accomplish the same thing:
-
 ```javascript
-/* 1. config */
-pwc({ bg: 'red' })
-pwc({ bg: '#f00' })
-pwc({ bg: 'rgb(255,0,0)' })
+pwc().turquoise().bgred().info('turquoise info msg with red background')
 
-/* 2. chaining */
-pwc().bg('red')
-pwc().bg('#f00')
-pwc().bg('rgb(255,0,0)')
-pwc().bgred()
+pwc().decorate('uppercase').cursive().log('uppercased cursive msg')
+
+pwc({ shadow: '4px 4px 5px green' }).large().error('large error msg with green shadow')
+
+pwc({ weight: 'bold', color: '#00f' }).size(20).log('bold, blue, and 20px msg')
 ```
 
-As shown above, any css value can be used, unless you are using the shorthand chaining api i.e. `.bgred()` which doesn't take any arguments.
+Have fun with making your logs pretty!
 
 ## Log Levels
 
-`.log()`, `.warn()`, `.error()`, `.info()`, and `.debug()` are supported.
+* `.log()`
+* `.warn()`
+* `.error()`
+* `.info()`
+* `.debug()`
 
 ## Custom Logger
 
-By default, the logger used is the standard browser console. But, you may pass in your own logger if you want!
+By default, the logger used is the standard browser console. But, you may pass in your own logger if you want.
 
-For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pass the message and a css styles object as arguments to `customWarnFn`. The styles object for the example would look like this:
+For example, let's say you have a logger function named `customWarnFn`. You just need to pass it to the log function as the second argument i.e. `pwc().blue().bold().underline().warn('hi', customWarnFn)`. This passes the message and a css styles object as arguments to your custom logger. The styles object for the example would look like this:
 
 ```javascript
 {
@@ -103,6 +115,8 @@ For example, `pwc().blue().bold().underline().warn('hi', customWarnFn)` would pa
   'text-decoration': 'underline'
 }
 ```
+
+Enjoy!
 
 [![NPM](https://nodei.co/npm/pretty-web-console.png?compact=true)](https://www.npmjs.com/package/pretty-web-console)
 
