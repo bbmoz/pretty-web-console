@@ -1,99 +1,110 @@
 import { allNames, nameMap, colors, weights, sizes, decorates, families, styles, transforms, bgs } from './namedStyleVals'
-import { appendColor, appendWeight, appendBg, appendSize, appendDecorate, appendFamily, appendStyle, appendTransform, appendShadow, appendPadding, appendMargin, appendCss } from './appendStyles'
+import * as appender from './appendStyles'
 import loggers from './loggers'
 
 function chainFns (store) {
-  const { log, warn, error, info, debug } = loggers(store)
+  store.styleFns = Object.assign({
+    color, weight, bg, size, decorate, family, style, transform, shadow, padding, margin, css
+  }, loggers(store))
 
-  store.styleFns = {
-    log, warn, error, info, debug, color, weight, bg, size, decorate, family, style, transform, shadow, padding, margin, css
-  }
+  populateStyleFnsWithShorthands(allNames, store)
 
   function color (val) {
-    appendColor(store, val)
+    appender.appendColor(store, val)
     return store.styleFns
   }
 
   function weight (val) {
-    appendWeight(store, val)
+    appender.appendWeight(store, val)
     return store.styleFns
   }
 
   function bg (val) {
-    appendBg(store, val)
+    appender.appendBg(store, val)
     return store.styleFns
   }
 
   function size (val) {
-    appendSize(store, val)
+    appender.appendSize(store, val)
     return store.styleFns
   }
 
   function decorate (val) {
-    appendDecorate(store, val)
+    appender.appendDecorate(store, val)
     return store.styleFns
   }
 
   function family (val) {
-    appendFamily(store, val)
+    appender.appendFamily(store, val)
     return store.styleFns
   }
 
   function style (val) {
-    appendStyle(store, val)
+    appender.appendStyle(store, val)
     return store.styleFns
   }
 
   function transform (val) {
-    appendTransform(store, val)
+    appender.appendTransform(store, val)
     return store.styleFns
   }
 
   function shadow (val) {
-    appendShadow(store, val)
+    appender.appendShadow(store, val)
     return store.styleFns
   }
 
   function padding (val) {
-    appendPadding(store, val)
+    appender.appendPadding(store, val)
     return store.styleFns
   }
 
   function margin (val) {
-    appendMargin(store, val)
+    appender.appendMargin(store, val)
     return store.styleFns
   }
 
   function css (val) {
-    appendCss(store, val)
+    appender.appendCss(store, val)
     return store.styleFns
   }
 
+  return store.styleFns
+}
+
+function populateStyleFnsWithShorthands (allNames, store) {
   allNames.forEach(styleVal => {
-    store.styleFns[styleVal] = function () {
+    store.styleFns[styleVal] = () => {
       const val = styleVal in nameMap ? nameMap[styleVal] : styleVal
+
       if (colors.includes(styleVal)) {
-        appendColor(store, val)
+        appender.appendColor(store, val)
+
       } else if (weights.includes(styleVal)) {
-        appendWeight(store, val)
+        appender.appendWeight(store, val)
+
       } else if (sizes.includes(styleVal)) {
-        appendSize(store, val)
+        appender.appendSize(store, val)
+
       } else if (decorates.includes(styleVal)) {
-        appendDecorate(store, val)
+        appender.appendDecorate(store, val)
+
       } else if (families.includes(styleVal)) {
-        appendFamily(store, val)
+        appender.appendFamily(store, val)
+
       } else if (styles.includes(styleVal)) {
-        appendStyle(store, val)
+        appender.appendStyle(store, val)
+
       } else if (transforms.includes(styleVal)) {
-        appendTransform(store, val)
+        appender.appendTransform(store, val)
+
       } else if (bgs.includes(styleVal)) {
-        appendBg(store, val)
+        appender.appendBg(store, val)
       }
+
       return store.styleFns
     }
   })
-
-  return store.styleFns
 }
 
 export default chainFns

@@ -11,13 +11,13 @@ function loggers (store) {
         if (print.isSinonProxy) {
           print(`%c${val}`, store.style)
         } else {
-          print(val, parseStyles(store.style), store.logLevel)
+          print(val, parseStylesIntoObj(store.style), store.logLevel)
         }
       }
     }
   }
 
-  function parseStyles (styleStr) {
+  function parseStylesIntoObj (styleStr) {
     const cssMap = {}
     const styles = styleStr.split(';')
 

@@ -7,20 +7,22 @@ function getLevel (val) {
     switch (val.toLowerCase()) {
       case 'debug':
         level = DEBUG; break
+
       case 'info':
         level = INFO; break
+
       case 'warn':
         level = WARN; break
+
       case 'error':
         level = ERROR; break
+
       case 'none':
         level = NONE; break
     }
   } else {
     const eVal = +val
-    if (eVal >= NONE && eVal <= ERROR) {
-      level = eVal
-    }
+    if (eVal >= NONE && eVal <= ERROR) level = eVal
   }
 
   return level
