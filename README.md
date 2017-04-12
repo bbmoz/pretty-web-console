@@ -59,7 +59,7 @@ logger.log('hi')
 pwc({ color: 'green' }).size('large').bold().log('hi again')
 ```
 
- To go a step further, you can show logs for just certain [log levels](#log-levels). You can even connect your own [custom logger](#custom-logger) instead of the browser's `console.log` if you want.
+ To go a step further, you can show logs for just certain [log levels](#log-levels). You can even connect your own [custom logger](#custom-logger) instead of the browser's default one if you want.
 
 ## Properties
 
@@ -122,7 +122,7 @@ pwc.level = -1  // 'none' => show no logs
 
 ## Custom Logger
 
-By default, the logger used is the standard browser console. But, you may pass in your own logger if you want.
+By default, the logger is the standard browser console's. But, you may pass in your own logger if you want.
 
 For example, let's say you have a logger function named `customWarnFn`. You just need to pass it to the log function as the second argument i.e. `pwc().blue().bold().underline().warn('hi', customWarnFn)`. This passes the **message**, a **css styles object**, and the **log level** as arguments to your custom logger.
 
