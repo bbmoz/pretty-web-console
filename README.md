@@ -92,21 +92,38 @@ pwc({ shadow: '4px 4px 5px green' }).large().error('large error msg with green s
 pwc({ weight: 'bold', color: '#00f' }).size(20).log('bold, blue, and 20px msg')
 ```
 
-Have fun with making your logs pretty!
-
 ## Log Levels
 
 * `.log()`
+* `.debug()`
+* `.info()`
 * `.warn()`
 * `.error()`
-* `.info()`
-* `.debug()`
+
+You can configure `pwc` to output logs for only certain levels. By default, the log level is a `0` which also represents `"log"` or `"debug"` which outputs logs from all levels. You can set the log level on `pwc` before it is used like this:
+
+```javascript
+pwc.level = 0   // 'log', 'debug' => all logs
+
+pwc.level = 1   // 'info' => info, warn, and error logs
+
+pwc.level = 2   // 'warn' => warn and error logs
+
+pwc.level = 3   // 'error' => only error logs
+
+pwc.level = -1  // 'none' => no logs
+
+// after setting a custom log level, you can proceed to logging
+pwc().blue().log('hi')
+```
 
 ## Custom Logger
 
 By default, the logger used is the standard browser console. But, you may pass in your own logger if you want.
 
-For example, let's say you have a logger function named `customWarnFn`. You just need to pass it to the log function as the second argument i.e. `pwc().blue().bold().underline().warn('hi', customWarnFn)`. This passes the message and a css styles object as arguments to your custom logger. The styles object for the example would look like this:
+For example, let's say you have a logger function named `customWarnFn`. You just need to pass it to the log function as the second argument i.e. `pwc().blue().bold().underline().warn('hi', customWarnFn)`. This passes the **message**, a **css styles object**, and the **log level** as arguments to your custom logger.
+
+The styles object for the example looks like this:
 
 ```javascript
 {

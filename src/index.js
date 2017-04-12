@@ -4,6 +4,7 @@ import readConfig from './readConfig'
 
 function pwc (config) {
   const store = new Store()
+  store.level = pwc.level
   if (typeof config === 'object') {
     readConfig(store, config)
   }

@@ -8,41 +8,29 @@ function readConfig (store, config) {
     const val = styleVal in nameMap ? nameMap[styleVal] : styleVal
     switch (styleName) {
       case 'color':
-        appendColor(store, val)
-        break
+        appendColor(store, val); break
       case 'weight':
-        appendWeight(store, val)
-        break
+        appendWeight(store, val); break
       case 'bg':
-        appendBg(store, val)
-        break
+        appendBg(store, val); break
       case 'size':
-        appendSize(store, val)
-        break
+        appendSize(store, val); break
       case 'decorate':
-        appendDecorate(store, val)
-        break
+        appendDecorate(store, val); break
       case 'family':
-        appendFamily(store, val)
-        break
+        appendFamily(store, val); break
       case 'style':
-        appendStyle(store, val)
-        break
+        appendStyle(store, val); break
       case 'transform':
-        appendTransform(store, val)
-        break
+        appendTransform(store, val); break
       case 'shadow':
-        appendShadow(store, val)
-        break
+        appendShadow(store, val); break
       case 'padding':
-        appendPadding(store, val)
-        break
+        appendPadding(store, val); break
       case 'margin':
-        appendMargin(store, val)
-        break
+        appendMargin(store, val); break
       case 'css':
-        appendCss(store, val)
-        break
+        appendCss(store, val); break
     }
   })
 }
