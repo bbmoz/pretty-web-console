@@ -20,6 +20,8 @@ $ npm install --save pretty-web-console
 
 You can use the rich **chaining** api and/or pass a **config** for your desired logs. It's easy!
 
+There are also options for showing logs for certain log levels and can even support your very own custom logger.
+
 ### Chaining
 
 ```javascript
@@ -100,7 +102,7 @@ pwc({ weight: 'bold', color: '#00f' }).size(20).log('bold, blue, and 20px msg')
 * `.warn()`
 * `.error()`
 
-You can configure `pwc` to output logs for only certain levels. By default, the log level is a `0` which also represents `"log"` or `"debug"` which outputs logs from all levels. You can set the log level on `pwc` before it is used like this:
+You can configure `pwc` to output logs for certain levels. By default, the log level is a `0` which also represents `"log"` or `"debug"` which outputs logs from all levels. You can set the log level on `pwc` before it is used like this:
 
 ```javascript
 pwc.level = 0   // 'log', 'debug' => all logs
