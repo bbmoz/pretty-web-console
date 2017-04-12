@@ -11,4 +11,4 @@ function pwc (config) {
   return chainFns(store)
 }
 
-export default pwc
+module.exports = pwc

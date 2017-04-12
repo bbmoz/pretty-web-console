@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = {
+const config = {
   context: path.join(__dirname, 'src'),
 
   entry: {
@@ -9,8 +9,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'pretty-web-console.js',
-    libraryTarget: 'commonjs-module'
+    filename: 'pretty-web-console.js'
   },
 
   module: {
@@ -23,3 +22,12 @@ module.exports = {
     }]
   }
 }
+
+if (process.env.LIB) {
+  config.output.library = 'pwc'
+  config.output.filename = 'pretty-web-console.lib.js'
+} else {
+  config.output.libraryTarget = 'commonjs-module'
+}
+
+module.exports = config

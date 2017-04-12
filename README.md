@@ -16,11 +16,13 @@
 $ npm install --save pretty-web-console
 ```
 
+You can then `require` or `import` it to get started. See [**Usage**](#usage).
+
+*Although not recommended, a standalone lib is also provided, so you can choose to load it in a `<script>` tag. You can find it in your node_modules directory as `pretty-web-console.lib.js`.*
+
 ## Usage
 
-You can use the rich **chaining** api and/or pass a **config** for your desired logs. It's easy!
-
-There are also options for showing logs for certain log levels and can even support your very own custom logger.
+Writing pretty logs is easy with the rich [**chaining**](#chaining) api and/or [**config**](#config) object.
 
 ### Chaining
 
@@ -56,6 +58,8 @@ logger.log('hi')
 // feel free to mix-and-match between different methods
 pwc({ color: 'green' }).size('large').bold().log('hi again')
 ```
+
+ To go a step further, you can show logs for just certain [log levels](#log-levels). You can even connect your own [custom logger](#custom-logger) instead of the browser's `console.log` if you want.
 
 ## Properties
 
@@ -102,22 +106,21 @@ pwc({ weight: 'bold', color: '#00f' }).size(20).log('bold, blue, and 20px msg')
 * `.warn()`
 * `.error()`
 
-You can configure `pwc` to output logs for certain levels. By default, the log level is a `0` which also represents `"log"` or `"debug"` which outputs logs from all levels. You can set the log level on `pwc` before it is used like this:
+You can configure `pwc` to output logs for certain levels. By default, the log level is a `0` which represents `"log"` or `"debug"`. If you want to change this, you can set the log level on `pwc` before it is used.
 
 ```javascript
-pwc.level = 0   // 'log', 'debug' => all logs
+pwc.level = 0   // 'log', 'debug' => show all logs
 
-pwc.level = 1   // 'info' => info, warn, and error logs
+pwc.level = 1   // 'info' => show info, warn, and error logs
 
-pwc.level = 2   // 'warn' => warn and error logs
+pwc.level = 2   // 'warn' => show warn and error logs
 
-pwc.level = 3   // 'error' => only error logs
+pwc.level = 3   // 'error' => show only error logs
 
-pwc.level = -1  // 'none' => no logs
-
-// after setting a custom log level, you can proceed to logging
-pwc().blue().log('hi')
+pwc.level = -1  // 'none' => show no logs
 ```
+
+After setting a custom log level, you can proceed to logging as usual.
 
 ## Custom Logger
 
