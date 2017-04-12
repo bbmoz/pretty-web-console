@@ -120,8 +120,6 @@ pwc.level = 3   // 'error' => show only error logs
 pwc.level = -1  // 'none' => show no logs
 ```
 
-After setting a custom log level, you can proceed to logging as usual.
-
 ## Custom Logger
 
 By default, the logger used is the standard browser console. But, you may pass in your own logger if you want.
