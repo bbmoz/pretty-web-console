@@ -16,7 +16,7 @@
 $ npm install --save pretty-web-console
 ```
 
-You can then `require` or `import` it to get started. See [**Usage**](#usage).
+You can then `require` or `import` it to get started. See [Usage](#usage). **If you're curious, see what [it took](#examples) to make the `pwc` logo above!**
 
 *Although not recommended, a standalone lib is also provided, so you can choose to load it in a `<script>` tag. You can find it in your node_modules directory as `pretty-web-console.lib.js`.*
 
@@ -98,6 +98,17 @@ pwc().decorate('uppercase').cursive().log('uppercased cursive msg')
 pwc({ shadow: '4px 4px 5px green' }).large().error('large error msg with green shadow')
 
 pwc({ weight: 'bold', color: '#00f' }).size(20).log('bold, blue, and 20px msg')
+
+// 'pwc' logo image!!
+pwc()
+  .size(100)
+  .fantasy()
+  .bold()
+  .turquoise()
+  .bgpeachpuff()
+  .padding('15px 50px 2px')
+  .shadow('0px 2px hsl(2.13, 50%, 50%), 1px 3px hsl(4.27, 100%, 50%), 2px 4px hsl(8.75, 100%, 50%), 3px 5px hsl(17.5, 100%, 50%), 4px 6px hsl(25, 100%, 50%), 5px 7px hsl(50, 100%, 50%), 6px 8px hsl(100, 100%, 50%), 7px 9px hsl(600, 20%, 80%)')
+  .log('PWC')
 ```
 
 ## Log Levels
