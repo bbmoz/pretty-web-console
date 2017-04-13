@@ -6,9 +6,9 @@
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/bbmoz/pretty-web-console/releases)
 
-> Bored of console.log? It's time to prettify it!
+![pwc](/media/pwc.png)
 
-![example](/media/example.png)
+> Bored of console.log? It's time to prettify it!
 
 ## Get Started
 
@@ -62,6 +62,8 @@ pwc({ color: 'green' }).size('large').bold().log('hi again')
  To go a step further, you can show logs for just certain [log levels](#log-levels). You can even connect your own [custom logger](#custom-logger) instead of the browser's default one if you want.
 
 ## Properties
+
+![example](/media/example.png)
 
 All properies below are available for chaining. But, only those marked with an asterisk `*` are supported by the config. These also accept css values, while the properties without an `*` don't take any arguments i.e. `blue()` and `bold()`.
 
