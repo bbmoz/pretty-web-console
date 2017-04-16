@@ -16,9 +16,16 @@
 $ npm install --save pretty-web-console
 ```
 
-You can then `require` or `import` it to get started. See [Usage](#usage). **If you're curious, see what [it took](#examples) to make the `pwc` logo above!**
+You can then `require` or `import` it to get started.
 
 *Although not recommended, a standalone lib is also provided, so you can choose to load it in a `<script>` tag. You can find it in your node_modules directory as `pretty-web-console.lib.js`.*
+
+## Table of Contents
+1. [Usage](#usage)
+1. [Properties](#properties)
+1. [Examples](#examples)
+1. [Log Levels](#log-levels)
+1. [Custom Logger](#custom-logger)
 
 ## Usage
 
@@ -88,7 +95,7 @@ All properies below are available for chaining. But, only those marked with an a
 * margin*
 * css*
 
-### Examples
+## Examples
 
 ```javascript
 pwc().turquoise().bgred().info('turquoise info msg with red background')
@@ -119,7 +126,7 @@ pwc()
 * `.warn()`
 * `.error()`
 
-You can configure `pwc` to output logs for certain levels. By default, the log level is a `0` which represents `"log"` or `"debug"`. If you want to change this, you can set the log level on `pwc` before it is used.
+You can configure `pwc` to output logs for certain levels. By default, the log level is a `0` which outputs all logs. If you want to change this, you can set the log level on `pwc`.
 
 ```javascript
 pwc.level = 0   // 'log', 'debug' => show all logs
@@ -139,7 +146,7 @@ By default, the logger is the standard browser console's. But, you may pass in y
 
 For example, let's say you have a logger function named `customWarnFn`. You just need to pass it to the log function as the second argument i.e. `pwc().blue().bold().underline().warn('hi', customWarnFn)`. This passes the **message**, a **css styles object**, and the **log level** as arguments to your custom logger.
 
-The styles object for the example looks like this:
+The styles object has key-value pairs of real css properties, like this:
 
 ```javascript
 {
