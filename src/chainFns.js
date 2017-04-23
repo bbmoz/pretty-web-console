@@ -2,69 +2,69 @@ import { allNames, nameMap, colors, weights, sizes, decorates, families, styles,
 import * as appender from './appendStyles'
 import loggers from './loggers'
 
-function chainFns (store) {
+function chainFns (store: any) {
   store.styleFns = Object.assign({
     color, weight, bg, size, decorate, family, style, transform, shadow, padding, margin, css
   }, loggers(store))
 
   populateStyleFnsWithShorthands(allNames, store)
 
-  function color (val) {
+  function color (val: string) {
     appender.appendColor(store, val)
     return store.styleFns
   }
 
-  function weight (val) {
+  function weight (val: string) {
     appender.appendWeight(store, val)
     return store.styleFns
   }
 
-  function bg (val) {
+  function bg (val: string) {
     appender.appendBg(store, val)
     return store.styleFns
   }
 
-  function size (val) {
+  function size (val: string | number) {
     appender.appendSize(store, val)
     return store.styleFns
   }
 
-  function decorate (val) {
+  function decorate (val: string) {
     appender.appendDecorate(store, val)
     return store.styleFns
   }
 
-  function family (val) {
+  function family (val: string) {
     appender.appendFamily(store, val)
     return store.styleFns
   }
 
-  function style (val) {
+  function style (val: string) {
     appender.appendStyle(store, val)
     return store.styleFns
   }
 
-  function transform (val) {
+  function transform (val: string) {
     appender.appendTransform(store, val)
     return store.styleFns
   }
 
-  function shadow (val) {
+  function shadow (val: string) {
     appender.appendShadow(store, val)
     return store.styleFns
   }
 
-  function padding (val) {
+  function padding (val: string) {
     appender.appendPadding(store, val)
     return store.styleFns
   }
 
-  function margin (val) {
+  function margin (val: string) {
     appender.appendMargin(store, val)
     return store.styleFns
   }
 
-  function css (val) {
+  function css (val: string) {
     appender.appendCss(store, val)
     return store.styleFns
   }
@@ -72,7 +72,7 @@ function chainFns (store) {
   return store.styleFns
 }
 
-function populateStyleFnsWithShorthands (allNames, store) {
+function populateStyleFnsWithShorthands (allNames: Array<string>, store: any) {
   allNames.forEach(styleVal => {
     store.styleFns[styleVal] = () => {
       const val = styleVal in nameMap ? nameMap[styleVal] : styleVal

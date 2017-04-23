@@ -1,6 +1,6 @@
 import { LOG, DEBUG, INFO, WARN, ERROR, NONE } from './levels'
 
-function getLevel (val) {
+function getLevel (val: string | number) {
   let level = LOG
 
   if (typeof val === 'string') {

@@ -1,7 +1,7 @@
 import { nameMap } from './namedStyleVals'
 import * as appender from './appendStyles'
 
-function readConfig (store, config) {
+function readConfig (store: any, config: any) {
   const styleNames = Object.keys(config)
 
   styleNames.forEach(styleName => {

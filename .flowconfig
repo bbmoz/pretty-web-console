@@ -1,0 +1,12 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/
+<PROJECT_ROOT>/media/
+<PROJECT_ROOT>/example/
+<PROJECT_ROOT>/docs/
+<PROJECT_ROOT>/dist/
+<PROJECT_ROOT>/test/
+<PROJECT_ROOT>/*
+
+[options]
+all=true
+unsafe.enable_getters_and_setters=true

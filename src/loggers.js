@@ -1,8 +1,8 @@
 import getLevel from './getLevel'
 
-function loggers (store) {
-  function out (defaultPrint, defaultLogLevel) {
-    return (val, print, logLevel) => {
+function loggers (store: any) {
+  function out (defaultPrint: Function, defaultLogLevel: string | number) {
+    return (val: string, print: any, logLevel: string | number) => {
       if (store.logLevel < 0) return
 
       if (!print && getLevel(defaultLogLevel) >= store.logLevel) {
@@ -17,7 +17,7 @@ function loggers (store) {
     }
   }
 
-  function parseStylesIntoObj (styleStr) {
+  function parseStylesIntoObj (styleStr: string) {
     const cssMap = {}
     const styles = styleStr.split(';')
 

@@ -2,7 +2,7 @@ import Store from './Store'
 import chainFns from './chainFns'
 import readConfig from './readConfig'
 
-function pwc (config) {
+function pwc (config: any) {
   const store = new Store()
   store.level = pwc.level
 
