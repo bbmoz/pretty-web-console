@@ -1,12 +1,12 @@
 # Pretty Web Console
 
-[![npm version](https://badge.fury.io/js/pretty-web-console.svg)](https://www.npmjs.com/package/pretty-web-console)
-[![Build Status](https://travis-ci.org/bbmoz/pretty-web-console.svg)](https://travis-ci.org/bbmoz/pretty-web-console)
-[![Code Climate](https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg)](https://codeclimate.com/github/bbmoz/pretty-web-console)
-[![Dependency Status](https://dependencyci.com/github/bbmoz/pretty-web-console/badge)](https://dependencyci.com/github/bbmoz/pretty-web-console)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
+[![npm][npm]][npm-url]
+[![build][build]][build-url]
+[![climate][climate]][climate-url]
+[![deps][deps]][deps-url]
+[![license][license]][license-url]
 
-![pwc](/media/pwc.png)
+![logo][logo]
 
 > Bored of console.log? It's time to prettify it!
 
@@ -70,7 +70,7 @@ pwc({ color: 'green' }).size('large').bold().log('hi again')
 
 ## Properties
 
-![example](/media/example.png)
+![example][example]
 
 All properies below are available for chaining. But, only those marked with an asterisk `*` are supported by the config. These also accept css values, while the properties without an `*` don't take any arguments i.e. `blue()` and `bold()`.
 
@@ -158,6 +158,32 @@ The styles object has key-value pairs of real css properties, like this:
 
 Enjoy!
 
-[![NPM](https://nodei.co/npm/pretty-web-console.png?compact=true)](https://www.npmjs.com/package/pretty-web-console)
+[![info][info]][info-url]
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/bbmoz/pretty-web-console)
+[![love][love]][love-url]
+
+
+[npm]: https://badge.fury.io/js/pretty-web-console.svg
+[npm-url]: https://www.npmjs.com/package/pretty-web-console
+
+[build]: https://travis-ci.org/bbmoz/pretty-web-console.svg
+[build-url]: https://travis-ci.org/bbmoz/pretty-web-console
+
+[climate]: https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg
+[climate-url]: https://codeclimate.com/github/bbmoz/pretty-web-console
+
+[deps]: https://dependencyci.com/github/bbmoz/pretty-web-console/badge
+[deps-url]: https://dependencyci.com/github/bbmoz/pretty-web-console
+
+[license]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-url]: https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE
+
+[logo]: /media/pwc.png
+
+[example]: /media/example.png
+
+[info]: https://nodei.co/npm/pretty-web-console.png?compact=true
+[info-url]: https://www.npmjs.com/package/pretty-web-console
+
+[love]: http://forthebadge.com/images/badges/built-with-love.svg
+[love-url]: https://github.com/bbmoz/pretty-web-console
