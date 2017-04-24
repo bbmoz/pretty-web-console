@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/pretty-web-console.svg)](https://www.npmjs.com/package/pretty-web-console)
 [![Build Status](https://travis-ci.org/bbmoz/pretty-web-console.svg)](https://travis-ci.org/bbmoz/pretty-web-console)
 [![Code Climate](https://codeclimate.com/github/bbmoz/pretty-web-console/badges/gpa.svg)](https://codeclimate.com/github/bbmoz/pretty-web-console)
+[![Dependency Status](https://dependencyci.com/github/bbmoz/pretty-web-console/badge)](https://dependencyci.com/github/bbmoz/pretty-web-console)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bbmoz/pretty-web-console/blob/master/LICENSE)
 
 ![pwc](/media/pwc.png)
